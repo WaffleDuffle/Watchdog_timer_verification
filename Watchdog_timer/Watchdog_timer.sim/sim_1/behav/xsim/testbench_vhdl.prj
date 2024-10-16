@@ -1,0 +1,6 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Watchdog_timer.gen/sources_1/ip/axi_timebase_wdt_0/sim/axi_timebase_wdt_0.vhd" \
+
+# Do not sort compile order
+nosort
