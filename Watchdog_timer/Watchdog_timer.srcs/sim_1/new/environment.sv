@@ -9,8 +9,8 @@ class environment extends uvm_env;
 	endfunction
 
 	virtual function void build_phase(uvm_phase phase);
-		// Print a message just to demonstrate that the env is created and it works
-		// We will add more functionality in the next lab
+		// Print a message just to demonstrate that the env works
+		
 		`uvm_info("DEBUG", "The build_phase of the environment was called", UVM_NONE)
 	endfunction
 endclass : environment
