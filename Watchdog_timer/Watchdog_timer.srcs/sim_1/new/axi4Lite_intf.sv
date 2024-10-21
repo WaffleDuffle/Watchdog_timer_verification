@@ -22,5 +22,5 @@ interface axi4Lite_intf();
     logic s_axi_wready       ;
     logic timebase_interrupt ;
     logic wdt_interrupt      ;
-    logic wdt_rese           ;
+    logic wdt_reset           ;
 endinterface
