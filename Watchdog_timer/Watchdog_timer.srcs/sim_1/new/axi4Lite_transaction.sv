@@ -12,26 +12,29 @@ class axi4Lite_transaction extends uvm_sequence_item;
     */
     // or
     
-    rand logic writeEnable;
-    rand logic [3:0] s_axi_araddr;
-    rand logic [31:0] s_axi_wdata;
-    logic [31:0] s_axi_rdata;
+    rand logic [3:0] addr;
+    rand logic [31:0] writeData;
+    rand logic addrwValid;
+    rand logic wValid;
+    logic [31:0] readData;
     
-    function new(string name="");
+    function new(string name="axi4Lite_transaction");
         super.new(name);
-        writeEnable = 0;
-        s_axi_araddr = 0;
-        s_axi_wdata = 0;
-        s_axi_rdata = 0;
+        readData = 0;
+        writeData = 0;
+        addr = 0;
+        addrwValid = 0;
+        wValid = 0;
     endfunction
     
     function string convert2string();
         string outputString = "";
-        outputString = $psprintf("%s\n\t * writeEnable=%0b", outputString, writeEnable);
-        outputString = $psprintf("%s\n\t * addr=%0h", outputString, s_axi_araddr);
-        outputString = $psprintf("%s\n\t * s_axi_wdata=%0h", outputString, s_axi_wdata);
-        outputString = $psprintf("%s\n\t * x_axi_rdata=%0h", outputString, s_axi_rdata);
+        outputString = $psprintf("%s\n\t * readData=%0b", outputString, readData);
+        outputString = $psprintf("%s\n\t * writeData=%0b", outputString, writeData);
+        outputString = $psprintf("%s\n\t * addr=%0h", outputString, addr);
+        outputString = $psprintf("%s\n\t * addrwValid=%0h", outputString, addrwValid);
+        outputString = $psprintf("%s\n\t * wValid=%0h", outputString, wValid);
         return outputString;
     endfunction
 
-endclass
+endclass 
