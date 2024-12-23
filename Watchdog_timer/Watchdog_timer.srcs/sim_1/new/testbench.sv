@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-`include "base_test.sv"
+`include "includes.sv"
+
 import uvm_pkg::*;
 
 module testbench();
@@ -76,12 +77,20 @@ assign s_axi_rvalid = axi4Lite.s_axi_rvalid;
 assign s_axi_wready = axi4Lite.s_axi_wready;
 assign timebase_interrupt = axi4Lite.timebase_interrupt;
 assign wdt_interrupt = axi4Lite.wdt_interrupt;
-//assign wdt_reset = axi4Lite.wdt_reset;
+assign wdt_reset = axi4Lite.wdt_reset;
 
 // ------- Run a test ------- //
 initial begin
     uvm_config_db#(virtual axi4Lite_intf)::set(null, "", "axi4Lite_interface", axi4Lite);
-
-    run_test("base_test");
+    fork
+        begin
+            run_test("base_test");
+        end
+        begin
+            int clkLimit = 1000;
+            repeat(clkLimit) @(posedge axi4Lite.s_axi_aclk);
+            `uvm_fatal("SIM_END", $psprintf("Reached sim limit = %0d", clkLimit))
+        end
+    join_any 
 end
 endmodule                              
