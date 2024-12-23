@@ -30,6 +30,12 @@ class axi4Lite_driver extends uvm_driver #(axi4Lite_transaction);
                 axi4Lite_interface.s_axi_wvalid = 1;
                 axi4Lite_interface.s_axi_awvalid = 1;
                 
+                //Wait until the consumer acknowledges the data and the address
+                wait(axi4Lite_interface.s_axi_awready == 1 && axi4Lite_interface.s_axi_wready == 1);
+                @(posedge axi4Lite_interface.s_axi_aclk);
+                axi4Lite_interface.s_axi_awvalid = 0;
+				axi4Lite_interface.s_axi_wvalid  = 0;
+
                 //Wait until the consumer aknowledges the write and check the response
                 wait(axi4Lite_interface.s_axi_bvalid == 1);
                 @(posedge axi4Lite_interface.s_axi_aclk);
