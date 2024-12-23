@@ -7,6 +7,7 @@ class axi4Lite_agent extends uvm_agent;
     `uvm_component_utils(axi4Lite_agent)
     
     axi4Lite_driver driver;
+    axi4Lite_monitor monitor;
     uvm_sequencer #(axi4Lite_transaction) sequencer;
     
     function new(string name="", uvm_component parent);
@@ -14,8 +15,9 @@ class axi4Lite_agent extends uvm_agent;
     endfunction
     
     virtual function void build_phase (uvm_phase phase);
-        driver = axi4Lite_driver::type_id::create("driver", this);
         sequencer = uvm_sequencer #(axi4Lite_transaction)::type_id::create("sequencer", this);
+        driver = axi4Lite_driver::type_id::create("driver", this);  
+        monitor =  axi4Lite_monitor::type_id::create("monitor", this);
     endfunction
     
     virtual function void connect_phase (uvm_phase phase);
