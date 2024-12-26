@@ -54,30 +54,27 @@ end
 
 // ----------- Signal assignments ----------- //  
 
-assign axi4Lite.s_axi_araddr = s_axi_araddr;
-assign axi4Lite.s_axi_arvalid = s_axi_arvalid;
-assign axi4Lite.s_axi_awaddr = s_axi_awaddr;
-assign axi4Lite.s_axi_awvalid = s_axi_awvalid;
-assign axi4Lite.s_axi_bready = s_axi_bready;
-assign axi4Lite.s_axi_rready = s_axi_rready;
-assign axi4Lite.s_axi_wdata = s_axi_wdata;
-assign axi4Lite.s_axi_wstrb = s_axi_wstrb;
-assign axi4Lite.s_axi_wvalid = s_axi_wvalid;
-assign axi4Lite.freeze = freeze;
-assign axi4Lite.s_axi_aclk = s_axi_aclk;
-assign axi4Lite.s_axi_aresetn = s_axi_aresetn;
+assign s_axi_araddr = axi4Lite.s_axi_araddr;
+assign s_axi_arvalid =axi4Lite.s_axi_arvalid;
+assign s_axi_awaddr = axi4Lite.s_axi_awaddr;
+assign s_axi_awvalid =axi4Lite.s_axi_awvalid;
+assign s_axi_bready = axi4Lite.s_axi_bready;
+assign s_axi_rready = axi4Lite.s_axi_rready;
+assign s_axi_wdata =  axi4Lite.s_axi_wdata;
+assign s_axi_wstrb =  axi4Lite.s_axi_wstrb;
+assign s_axi_wvalid = axi4Lite.s_axi_wvalid;
+assign s_axi_aresetn =axi4Lite.s_axi_aresetn;
 
-assign s_axi_arready = axi4Lite.s_axi_arready;
-assign s_axi_awready = axi4Lite.s_axi_awready;
-assign s_axi_bresp = axi4Lite.s_axi_bresp;
-assign s_axi_bvalid = axi4Lite.s_axi_bvalid; 
-assign s_axi_rdata = axi4Lite.s_axi_rdata;
-assign s_axi_rresp = axi4Lite.s_axi_rresp;
-assign s_axi_rvalid = axi4Lite.s_axi_rvalid; 
-assign s_axi_wready = axi4Lite.s_axi_wready;
-assign timebase_interrupt = axi4Lite.timebase_interrupt;
-assign wdt_interrupt = axi4Lite.wdt_interrupt;
-assign wdt_reset = axi4Lite.wdt_reset;
+assign axi4Lite.s_axi_aclk = s_axi_aclk;
+assign axi4Lite.s_axi_arready = s_axi_arready;
+assign axi4Lite.s_axi_awready = s_axi_awready;
+assign axi4Lite.s_axi_bresp = s_axi_bresp;
+assign axi4Lite.s_axi_bvalid = s_axi_bvalid; 
+assign axi4Lite.s_axi_rdata = s_axi_rdata;
+assign axi4Lite.s_axi_rresp = s_axi_rresp;
+assign axi4Lite.s_axi_rvalid = s_axi_rvalid; 
+assign axi4Lite.s_axi_wready = s_axi_wready;
+       
 
 // ------- Run a test ------- //
 initial begin
@@ -86,7 +83,7 @@ initial begin
         begin
             run_test("base_test");
         end
-        begin
+        begin       
             int clkLimit = 1000;
             repeat(clkLimit) @(posedge axi4Lite.s_axi_aclk);
             `uvm_fatal("SIM_END", $psprintf("Reached sim limit = %0d", clkLimit))
