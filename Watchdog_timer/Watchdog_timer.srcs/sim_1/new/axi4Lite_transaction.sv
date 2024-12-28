@@ -14,8 +14,7 @@ class axi4Lite_transaction extends uvm_sequence_item;
     
     rand logic [3:0] addr;
     rand logic [31:0] writeData;
-    rand logic addrwValid;
-    rand logic wValid;
+    rand logic writeEnable;
     logic [31:0] readData;
     
     function new(string name="axi4Lite_transaction");
@@ -23,8 +22,7 @@ class axi4Lite_transaction extends uvm_sequence_item;
         readData = 0;
         writeData = 0;
         addr = 0;
-        addrwValid = 0;
-        wValid = 0;
+        writeEnable = 0;
     endfunction
     
     function string convert2string();
@@ -32,8 +30,8 @@ class axi4Lite_transaction extends uvm_sequence_item;
         outputString = $psprintf("%s\n\t * readData=%0b", outputString, readData);
         outputString = $psprintf("%s\n\t * writeData=%0b", outputString, writeData);
         outputString = $psprintf("%s\n\t * addr=%0h", outputString, addr);
-        outputString = $psprintf("%s\n\t * addrwValid=%0h", outputString, addrwValid);
-        outputString = $psprintf("%s\n\t * wValid=%0h", outputString, wValid);
+        outputString = $psprintf("%s\n\t * writeEnable=%0h", outputString, writeEnable);
+        
         return outputString;
     endfunction
 

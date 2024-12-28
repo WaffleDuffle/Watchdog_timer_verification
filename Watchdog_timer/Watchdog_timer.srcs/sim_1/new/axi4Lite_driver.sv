@@ -21,7 +21,7 @@ class axi4Lite_driver extends uvm_driver #(axi4Lite_transaction);
             uvm_report_info("axi4Lite_driver", $psprintf("Recieved new item: %s", axi4Lite_item.convert2string()), UVM_NONE); // finish ramane blocat pana se termina asta
             @(posedge axi4Lite_interface.s_axi_aclk);
             
-            if(axi4Lite_item.wValid == 1 && axi4Lite_item.addrwValid == 1) begin  // Write
+            if(axi4Lite_item.writeEnable == 1) begin  // Write
                 `uvm_info("axi4Lite_driver", $psprintf("Entered first if statement"), UVM_NONE)
                 // Drive the address and data
                 axi4Lite_interface.s_axi_wdata = axi4Lite_item.writeData;
@@ -42,7 +42,7 @@ class axi4Lite_driver extends uvm_driver #(axi4Lite_transaction);
                 wait(axi4Lite_interface.s_axi_bvalid == 1);
                 @(posedge axi4Lite_interface.s_axi_aclk);
                               
-                if(axi4Lite_interface.s_axi_bresp == 2'b00) 
+                if(axi4Lite_interface.s_axi_bresp == 0) 
                     `uvm_info("axi4Lite_driver", "Write access successfull", UVM_NONE)
                 else
                     `uvm_warning("axi4Lite_driver", $psprintf("The previous write generated %0b response", axi4Lite_interface.s_axi_bresp))
@@ -69,7 +69,7 @@ class axi4Lite_driver extends uvm_driver #(axi4Lite_transaction);
                 wait (axi4Lite_interface.s_axi_rvalid == 1);
                 
                 @(posedge axi4Lite_interface.s_axi_aclk);
-                if(axi4Lite_interface.s_axi_rresp == 2'b00) 
+                if(axi4Lite_interface.s_axi_rresp == 0) 
                     `uvm_info("axi4Lite_driver", "Read access successfull", UVM_NONE)
                 else
                     `uvm_warning("axi4Lite_driver", $psprintf("The previous read generated %0b response", axi4Lite_interface.s_axi_rresp))

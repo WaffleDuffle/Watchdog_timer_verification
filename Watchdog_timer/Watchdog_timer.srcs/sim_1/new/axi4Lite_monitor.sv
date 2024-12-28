@@ -25,8 +25,7 @@ class axi4Lite_monitor extends uvm_monitor;
 				axi4Lite_transaction axi4Lite_item;
 				axi4Lite_item = axi4Lite_transaction::type_id::create("axi4Lite_item_write");
 
-                axi4Lite_item.addrwValid = 1;
-                axi4Lite_item.wValid = 1;
+                axi4Lite_item.writeEnable = 1;
                 
 				wait(axi4Lite_interface.s_axi_awready == 1 && axi4Lite_interface.s_axi_wready == 1);
 				@(posedge axi4Lite_interface.s_axi_aclk);

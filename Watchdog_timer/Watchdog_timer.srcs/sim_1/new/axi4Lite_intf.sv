@@ -9,7 +9,6 @@ interface axi4Lite_intf();
     logic [31:0] s_axi_wdata ;    
     logic [3:0] s_axi_wstrb  ;
     logic s_axi_wvalid       ;
-    logic freeze             ;
     logic s_axi_aclk         ;
     logic s_axi_aresetn      ;
     logic s_axi_arready      ;
@@ -19,8 +18,5 @@ interface axi4Lite_intf();
     logic [31:0] s_axi_rdata ;
     logic [1:0] s_axi_rresp  ;
     logic s_axi_rvalid       ;
-    logic s_axi_wready       ;
-    logic timebase_interrupt ;
-    logic wdt_interrupt      ;
-    logic wdt_reset           ;
-endinterface
+    logic s_axi_wready       ;   
+endinterface: axi4Lite_intf

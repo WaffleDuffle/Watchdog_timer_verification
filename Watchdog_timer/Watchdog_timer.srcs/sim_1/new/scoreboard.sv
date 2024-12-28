@@ -18,7 +18,7 @@ class scoreboard extends uvm_scoreboard;
     endfunction
     
     virtual function void write_axi4Lite_monitor(axi4Lite_transaction monitorItem);
-        if(monitorItem.addrwValid == 1 && monitorItem.wValid == 1)
+        if(monitorItem.writeEnable == 1)
             registerBank[monitorItem.addr/4] = monitorItem.writeData;
         else begin
             if(monitorItem.readData != registerBank[monitorItem.addr/4])
