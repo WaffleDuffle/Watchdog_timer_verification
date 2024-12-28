@@ -4,6 +4,7 @@
 `include "axi4Lite_monitor.sv"
 `include "axi4Lite_driver.sv"
 `include "axi4Lite_agent.sv"
+`include "scoreboard.sv"
 `include "axi4Lite_baseSequence.sv"
 `include "environment.sv"
 `include "base_test.sv"
