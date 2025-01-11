@@ -1,0 +1,468 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "axi_timebase_wdt_0",
+    "component_reference": "xilinx.com:ip:axi_timebase_wdt:3.0",
+    "ip_revision": "23",
+    "gen_directory": "../../../../Watchdog_timer.gen/sources_1/ip/axi_timebase_wdt_0",
+    "parameters": {
+      "component_parameters": {
+        "C_WDT_INTERVAL": [ { "value": "30", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "Component_Name": [ { "value": "axi_timebase_wdt_0", "resolve_type": "user", "usage": "all" } ],
+        "WDT_ENABLE_ONCE": [ { "value": "Enable_only_once", "resolve_type": "user", "usage": "all" } ],
+        "ENABLE_WINDOW_WDT": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "MAX_COUNT_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "SST_COUNT_WIDTH": [ { "value": "8", "resolve_type": "user", "format": "long", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "C_FAMILY": [ { "value": "virtex7", "resolve_type": "generated", "usage": "all" } ],
+        "C_WDT_INTERVAL": [ { "value": "30", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_WDT_ENABLE_ONCE": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_S_AXI_DATA_WIDTH": [ { "value": "32", "format": "long", "usage": "all" } ],
+        "C_S_AXI_ADDR_WIDTH": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_ENABLE_WINDOW_WDT": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_SST_COUNT_WIDTH": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_MAX_COUNT_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "virtex7" } ],
+        "BASE_BOARD_PART": [ { "value": "" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7vx485t" } ],
+        "NEXTGEN_VERSAL": [ { "value": "0" } ],
+        "PACKAGE": [ { "value": "ffg1157" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Flow" } ],
+        "IPREVISION": [ { "value": "23" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../Watchdog_timer.gen/sources_1/ip/axi_timebase_wdt_0" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "." } ],
+        "SWVERSION": [ { "value": "2024.1" } ],
+        "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "s_axi_araddr": [ { "direction": "in", "size_left": "5", "size_right": "0" } ],
+        "s_axi_arready": [ { "direction": "out" } ],
+        "s_axi_arvalid": [ { "direction": "in" } ],
+        "s_axi_awaddr": [ { "direction": "in", "size_left": "5", "size_right": "0" } ],
+        "s_axi_awready": [ { "direction": "out" } ],
+        "s_axi_awvalid": [ { "direction": "in" } ],
+        "s_axi_bready": [ { "direction": "in" } ],
+        "s_axi_bresp": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
+        "s_axi_bvalid": [ { "direction": "out" } ],
+        "s_axi_rdata": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
+        "s_axi_rready": [ { "direction": "in" } ],
+        "s_axi_rresp": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
+        "s_axi_rvalid": [ { "direction": "out" } ],
+        "s_axi_wdata": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "s_axi_wready": [ { "direction": "out" } ],
+        "s_axi_wstrb": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
+        "s_axi_wvalid": [ { "direction": "in" } ],
+        "s_axi_aclk": [ { "direction": "in" } ],
+        "s_axi_aresetn": [ { "direction": "in" } ],
+        "wdt_interrupt": [ { "direction": "out" } ],
+        "wdt_reset": [ { "direction": "out" } ],
+        "wdt_reset_pending": [ { "direction": "out" } ],
+        "wdt_state_vec": [ { "direction": "out", "size_left": "6", "size_right": "0" } ]
+      },
+      "interfaces": {
+        "S_AXI": {
+          "vlnv": "xilinx.com:interface:aximm:1.0",
+          "abstraction_type": "xilinx.com:interface:aximm_rtl:1.0",
+          "mode": "slave",
+          "memory_map_ref": "S_AXI",
+          "parameters": {
+            "DATA_WIDTH": [ { "value": "32", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PROTOCOL": [ { "value": "AXI4LITE", "value_src": "constant", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "100000000", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ID_WIDTH": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ADDR_WIDTH": [ { "value": "6", "value_src": "auto", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "AWUSER_WIDTH": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ARUSER_WIDTH": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "WUSER_WIDTH": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "RUSER_WIDTH": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "BUSER_WIDTH": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_src": "constant", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_BURST": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_LOCK": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_PROT": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_CACHE": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_QOS": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_REGION": [ { "value": "0", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_WSTRB": [ { "value": "1", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_BRESP": [ { "value": "1", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_RRESP": [ { "value": "1", "value_src": "constant", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "SUPPORTS_NARROW_BURST": [ { "value": "0", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_READ_OUTSTANDING": [ { "value": "1", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_WRITE_OUTSTANDING": [ { "value": "1", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MAX_BURST_LENGTH": [ { "value": "1", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_READ_THREADS": [ { "value": "1", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_WRITE_THREADS": [ { "value": "1", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "RUSER_BITS_PER_BYTE": [ { "value": "0", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "WUSER_BITS_PER_BYTE": [ { "value": "0", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "ARADDR": [ { "physical_name": "s_axi_araddr" } ],
+            "ARREADY": [ { "physical_name": "s_axi_arready" } ],
+            "ARVALID": [ { "physical_name": "s_axi_arvalid" } ],
+            "AWADDR": [ { "physical_name": "s_axi_awaddr" } ],
+            "AWREADY": [ { "physical_name": "s_axi_awready" } ],
+            "AWVALID": [ { "physical_name": "s_axi_awvalid" } ],
+            "BREADY": [ { "physical_name": "s_axi_bready" } ],
+            "BRESP": [ { "physical_name": "s_axi_bresp" } ],
+            "BVALID": [ { "physical_name": "s_axi_bvalid" } ],
+            "RDATA": [ { "physical_name": "s_axi_rdata" } ],
+            "RREADY": [ { "physical_name": "s_axi_rready" } ],
+            "RRESP": [ { "physical_name": "s_axi_rresp" } ],
+            "RVALID": [ { "physical_name": "s_axi_rvalid" } ],
+            "WDATA": [ { "physical_name": "s_axi_wdata" } ],
+            "WREADY": [ { "physical_name": "s_axi_wready" } ],
+            "WSTRB": [ { "physical_name": "s_axi_wstrb" } ],
+            "WVALID": [ { "physical_name": "s_axi_wvalid" } ]
+          }
+        },
+        "S_AXI_ACLK": {
+          "vlnv": "xilinx.com:signal:clock:1.0",
+          "abstraction_type": "xilinx.com:signal:clock_rtl:1.0",
+          "mode": "slave",
+          "parameters": {
+            "ASSOCIATED_BUSIF": [ { "value": "S_AXI", "value_src": "constant", "usage": "all" } ],
+            "ASSOCIATED_RESET": [ { "value": "s_axi_aresetn:wdt_reset", "value_src": "constant", "usage": "all" } ],
+            "FREQ_HZ": [ { "value": "100000000", "resolve_type": "user", "format": "long", "usage": "all" } ],
+            "FREQ_TOLERANCE_HZ": [ { "value": "0", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "ASSOCIATED_PORT": [ { "value": "", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "CLK": [ { "physical_name": "s_axi_aclk" } ]
+          }
+        },
+        "S_AXI_ARESETN": {
+          "vlnv": "xilinx.com:signal:reset:1.0",
+          "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
+          "mode": "slave",
+          "parameters": {
+            "POLARITY": [ { "value": "ACTIVE_LOW", "value_src": "constant", "usage": "all" } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "RST": [ { "physical_name": "s_axi_aresetn" } ]
+          }
+        },
+        "WDT_INTERRUPT": {
+          "vlnv": "xilinx.com:signal:interrupt:1.0",
+          "abstraction_type": "xilinx.com:signal:interrupt_rtl:1.0",
+          "mode": "master",
+          "parameters": {
+            "SENSITIVITY": [ { "value": "LEVEL_HIGH", "value_src": "constant", "usage": "all" } ],
+            "PortWidth": [ { "value": "1", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "INTERRUPT": [ { "physical_name": "wdt_interrupt" } ]
+          }
+        },
+        "WDT_RESET": {
+          "vlnv": "xilinx.com:signal:reset:1.0",
+          "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
+          "mode": "master",
+          "parameters": {
+            "POLARITY": [ { "value": "ACTIVE_HIGH", "value_src": "constant", "usage": "all" } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "RST": [ { "physical_name": "wdt_reset" } ]
+          }
+        }
+      },
+      "memory_maps": {
+        "S_AXI": {
+          "display_name": "S_AXI_MEM",
+          "description": "Memory Map for S_AXI",
+          "address_blocks": {
+            "Reg": {
+              "base_address": "0",
+              "range": "2048",
+              "display_name": "Reg",
+              "description": "Register Block",
+              "usage": "register",
+              "access": "read-write",
+              "registers": {
+                "MWR": {
+                  "address_offset": "0x0C",
+                  "size": 32,
+                  "display_name": "MWR",
+                  "description": "Master Write Control Register",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "Width_of_Watchdog_Timer": {
+                      "bit_offset": 0,
+                      "bit_width": 5,
+                      "display_name": "Width of Watchdog Timer",
+                      "description": "Width of Watchdog Timer\nProgram the register to change the width of watchdog timer.\nValid values are 8-31. Programming any other value can result in undefined behavior\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "MWC": {
+                      "bit_offset": 0,
+                      "bit_width": 1,
+                      "display_name": "Master Write Control",
+                      "description": "Master write access control bit for the Window Watchdog.   0 - Window WDT register space is read only   1 - Window WDT register space is writable In basic WWDT mode, this bit auto clears when WEN is changed from 0 to 1.\nThis bit controls the write access to the complete register space.\nWhen this bit is 0, writes to any register are ignored by all means (that is, it does not lead to good or bad event generation).\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "AEN": {
+                      "bit_offset": 1,
+                      "bit_width": 1,
+                      "display_name": "WWDT Always Enable",
+                      "description": "WWDT Always Enable\nThis bit provides extra safeguard (if needed) against unintentional clear of WEN bit.   0 - WEN bit can be cleared, depending on WDP value   1 - WEN bit cannot be cleared After this is set, this bit can be cleared only by applying reset. If required, this bit should be set before Window WDT is enabled.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "ESR": {
+                  "address_offset": "0x10",
+                  "size": 32,
+                  "display_name": "ESR",
+                  "description": "Enable and Status Register",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "WEN": {
+                      "bit_offset": 0,
+                      "bit_width": 1,
+                      "display_name": "Window WDT Enable",
+                      "description": "Window WDT Enable\nThis bit is the enable bit for Window WDT.   0 = Window WDT is disabled   1 = Window WDT is enabled Disabling watchdog in first window duration is considered a bad event and disablement is not honored. Watchdog can be disabled only in the second window duration (If fail counter is enabled, watchdog can be disabled only when fail counter is 0. If fail counter is not enabled, it can be cleared any time in second window.),\nIf WEN clear and WSW clear events happen at same time, then the core considers only WEN.\nIf wrong configuration is detected or wdt_reset is generated, this bit auto clears (irrespective of WDP settings).\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "WCFG": {
+                      "bit_offset": 1,
+                      "bit_width": 1,
+                      "display_name": "Wrong Configuration",
+                      "description": "Wrong Configuration\nThis is a status bit that indicates wrong configuration as follows.\nThis bit gets set if second window count is set as 0 (when WEN bit is made 1).\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "WSW": {
+                      "bit_offset": 8,
+                      "bit_width": 1,
+                      "display_name": "Window WDT in Second Window",
+                      "description": "Window WDT in Second Window\nThis bit is a status bit and tracks when Window WDT is in second window.   0 = Window WDT is not in Second Window   1 = Window WDT is in Second Window This bit is RW1C and is used by software to provide restart kick to Window WDT (that is, when this bit is 1, Software writes 1 to clear it and it is considered as restart kick).\nIf software writes 1 on this bit when this bit is 0, it is considered a bad event (value of WSW does not change).\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "WINT": {
+                      "bit_offset": 16,
+                      "bit_width": 1,
+                      "display_name": "Watchdog Interrupt",
+                      "description": "Watchdog Interrupt\nThis status bit asserts High in the next clock cycle, after watchdog reaches to the interrupt programmed point in second window.\nRestart of timer automatically clears WINT bit.\nIt is a Write 1 to Clear bit. When this bit is cleared, wdt_interrupt deasserts.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "WRP": {
+                      "bit_offset": 17,
+                      "bit_width": 1,
+                      "display_name": "Watchdog Reset Pending",
+                      "description": "Watchdog Reset Pending\nThis status bit asserts High when SST counter starts.\nIt is a Write 1 to Clear bit. When this bit is cleared, wdt_reset_pending deasserts.\nThis bit and the output wdt_reset_pending is provided to indicate that wdt_reset is asserted when SST count rolls over and can be used as an another independent interrupt from the core.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "FCV": {
+                      "bit_offset": 20,
+                      "bit_width": 3,
+                      "display_name": "Fail Counter Value",
+                      "description": "Fail Counter Value\nWatchdog fail counter value (initialized to 5).\nA good event decrements FCV by 1 unless it is 0. A bad event increments FCV unless it is 7. If the FCV = 7 and another bad event happens, wdt_reset is generated (either immediately or after SST count rolls over).\n",
+                      "is_volatile": true,
+                      "access": "read-only"
+                    },
+                    "LBE": {
+                      "bit_offset": 24,
+                      "bit_width": 3,
+                      "display_name": "Last Bad Event",
+                      "description": "Last Bad Event\nThis status field provides the scratch bit functionality.\nThis bit is not cleared by a system reset so that it can be read after a system reset to determine the reason for the reset generation.\nUntil wdt_reset is not asserted, these bits can be cleared by writing 111.\nAfter wdt_reset is asserted by the core, this bit can be cleared only by applying reset to the IP (asserting AXI reset) followed by writing 111 to this field. Writing any other pattern has no effect.\nBasic Mode   000 - No bad event   001 - Restart kick in first window or disable attempt in first window   010 - TSR mismatch or disable attempt in second window when FC is enabled and its value is non-zero   011 - Second window overflow\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "FCR": {
+                  "address_offset": "0x14",
+                  "size": 32,
+                  "display_name": "FCR",
+                  "description": "Function Control Register",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "WDP": {
+                      "bit_offset": 0,
+                      "bit_width": 1,
+                      "display_name": "WWDT Disable Protection",
+                      "description": "WWDT Disable Protection\nThis bit provides extra safeguard (if needed) against unintentional clear of WEN bit).   0 - WEN bit can be cleared   1 - WEN bit cannot be cleared If required, this bit should be set before Window WDT is enabled.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "FCE": {
+                      "bit_offset": 2,
+                      "bit_width": 1,
+                      "display_name": "Fail Counter Enable",
+                      "description": "Fail Counter Enable\nThis bit provides option to disable the fail counter in basic WWDT mode.   0 - Fail counter disabled   1 - Fail counter enabled When disabled, one bad event triggers wdt_reset generation (either immediately when SSTE is disabled or after SC count delay when SSTE is enabled).\nWhen fail counter is enabled, wdt_reset is generated when fail counter is 7 and another bad event happens.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "PSME": {
+                      "bit_offset": 3,
+                      "bit_width": 1,
+                      "display_name": "Program Sequence Monitor Enable",
+                      "description": "Program Sequence Monitor Enable\nThis bit enables Task Signature register comparison in basic WWDT mode.   0 - PSM disable   1 - PSM enabled When this function is enabled, the core checks and compares the contents of TSR0 and TSR1 registers at the restart kick/disablement of Window WDT in second window. If they match, no effect. If they do not match, wdt_reset is generated (either immediately when SSTE is disabled or after SC count delay when SSTE is enabled).\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "SSTE": {
+                      "bit_offset": 4,
+                      "bit_width": 1,
+                      "display_name": "Second Sequence Timer Enable",
+                      "description": "Second Sequence Timer Enable\nThis bit enables second sequence timer function.   0 - SST disabled   1 - SST enabled This option provides additional time to software by delaying the inevitable wdt_reset assertion/generation by SC count delay. SC count delay time in the STR register is controlled through GUI option.\nThis is an independent function and can be enabled in any WWDT mode with/without other options).\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "BSS": {
+                      "bit_offset": 6,
+                      "bit_width": 2,
+                      "display_name": "Byte Segment Selection (of Second Window Count)",
+                      "description": "Byte Segment Selection (of Second Window Count)\nThis field (along with SBC[7:0]) is used to determine the interrupt assertion point in the second window configuration.\nBSS[1:0] provides Byte Segment selection in Second Window Count as:   00 - SW Byte0 selected (that is, SBC[7:0] are compared with SW[7:0])   01 - SW Byte1 selected (that is, SBC[7:0] are compared with SW[15:8])   10 - SW Byte2 selected (that is, SBC[7:0] are compared with SW[23:16])   11 - SW Byte3 selected (that is, SBC[7:0] are compared with SW[31:24]) For example:   If BSS = 00 and SWC = 0xAA then WDT asserts interrupt when second window reaches 0x000000AA that is when SW[7:0] == SBC[7:0] and other bits are zeros   If BSS = 01 and SWC = 0xAA then WDT asserts interrupt when second window reaches 0x0000AA00 that is when SW[15:8] == SBC[7:0] and other bits are zeros\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "SBC": {
+                      "bit_offset": 8,
+                      "bit_width": 8,
+                      "display_name": "Selected Byte Count",
+                      "description": "Selected Byte Count\nThis field (along with BSS[1:0]) is used to determine the interrupt assertion point in the second window configuration.\nSBC[7:0] provides the count value of selected byte segment.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "FWR": {
+                  "address_offset": "0x18",
+                  "size": 32,
+                  "display_name": "FWR",
+                  "description": "First Window Configuration Register",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "FW": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "display_name": "First Window Count",
+                      "description": "First Window Count\nThis field provides the count value for the first window and is valid for both WWDT modes.\nFW[31:0] = First Window Count value\nFW Counter is a down counter and it starts from the programmed FWR value and ends at 0.\nFirst window continue. When completed, it is followed by the second window.\nThis field can be set as 0. In this case, it achieves “close” window absent case.\nXilinx recommends that the minimum non-zero value should be 15 or more.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "SWR": {
+                  "address_offset": "0x1C",
+                  "size": 32,
+                  "display_name": "SWR",
+                  "description": "Second Window Configuration Register",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "SW": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "display_name": "Second Window Count",
+                      "description": "Second Window Count\nThis field provides the count value for the second window and is valid for both WWDT modes.\nSW[31:0] = Second Window Count value\nSW Counter is a down counter and it starts with the programmed SWR value and ends at 0.\nSW[31:0] is used to place the interrupt assertion with the help of BSS[1:0] and SBC[7:0].\nAny good or bad event ends the second window.\nAbsence of a good or bad event allows the second window timeout. This is considered a bad event.\nThis field cannot be set as 0. Setting this field as 0 causes “Wrong Config” status bit set which disables WWDT (by clearing WEN bit irrespective of WDP settings).\nXilinx recommends that the minimum value should be sufficiently large to complete the required AXI4-Lite write transactions at system-level.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "TSR0": {
+                  "address_offset": "0x20",
+                  "size": 32,
+                  "display_name": "TSR0",
+                  "description": "Task Signature Register",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "TSR0": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "display_name": "Task Signature 0",
+                      "description": "Task Signature 0\nThis register function is controlled through the PSME bit.\nSoftware writes a signature into this register. The core makes comparison with TSR1 at watchdog restart kick point.\nIf TSR1 != TSR0 at restart point, this is considered a bad event.\nIf TSR1 = TSR0 at restart point, this is considered a good event.\nThe core does not track writes to this register and it makes comparison at restart time.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "TSR1": {
+                  "address_offset": "0x24",
+                  "size": 32,
+                  "display_name": "TSR1",
+                  "description": "Task Signature Register",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "TSR1": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "display_name": "Task Signature 1",
+                      "description": "Task Signature 1\nThis register function is controlled through the PSME bit.\nSoftware writes a signature into this register. The core makes comparison with TSR0 at watchdog restart kick point.\nIf TSR1 != TSR0 at restart point, this is considered a bad event.\nIf TSR1 = TSR0 at restart point, this is considered a good event.\nThe core does not track writes to this register and it makes comparison at restart time.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "STR": {
+                  "address_offset": "0x28",
+                  "size": 32,
+                  "display_name": "STR",
+                  "description": "Second Sequence Timer Register",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "SC": {
+                      "bit_offset": 0,
+                      "bit_width": 8,
+                      "display_name": "SST Count",
+                      "description": "SST Count\nThis is free running down counter starts from 2^(SST_WIDTH – 1).\nFunction of this counter is to provide extra delay before inevitable wdt_reset is generated.\nWidth of the counter is provided as a GUI option from 8 to 31.\nThis counter runs only if SSTE = 1.\n",
+                      "is_volatile": true,
+                      "access": "read-only"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
