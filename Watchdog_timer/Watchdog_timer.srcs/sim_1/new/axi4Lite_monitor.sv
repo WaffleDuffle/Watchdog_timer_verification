@@ -59,5 +59,4 @@ class axi4Lite_monitor extends uvm_monitor;
 		join
 
     endtask
-
 endclass
