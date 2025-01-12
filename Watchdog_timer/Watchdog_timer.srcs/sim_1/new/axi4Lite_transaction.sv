@@ -12,14 +12,16 @@ class axi4Lite_transaction extends uvm_sequence_item;
     */
     // or
     
-    rand logic [3:0] addr;
+    rand logic [5:0] addr;
     rand logic [31:0] writeData;
     rand logic writeEnable;
     logic [31:0] readData;
     
     constraint c_addr {
         (addr % 4) == 0;
+        addr <= 5'h10;
     }
+    
     function new(string name="axi4Lite_transaction");
         super.new(name);
         readData = 0;
