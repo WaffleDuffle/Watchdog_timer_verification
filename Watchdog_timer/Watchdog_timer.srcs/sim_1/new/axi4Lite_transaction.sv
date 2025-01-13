@@ -19,7 +19,8 @@ class axi4Lite_transaction extends uvm_sequence_item;
     
     constraint c_addr {
         (addr % 4) == 0;
-        addr <= 5'h10;
+        addr inside {6'h14, 6'h18, 6'h1C, 6'h20, 6'h24, 6'h28};
+      
     }
     
     function new(string name="axi4Lite_transaction");
