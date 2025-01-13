@@ -36,7 +36,7 @@ class base_test extends uvm_test;
         axi4Lite.s_axi_aresetn = 1;
         
         
-        baseSeq.transactionAmount = 15;
+        baseSeq.transactionAmount = 50;
              
         baseSeq.start(env.agent.sequencer);
         phase.drop_objection(this);
